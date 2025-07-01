@@ -7,7 +7,7 @@
 
 # Solution Code
 
-## Project 1
+## Project 1- colorChanger
 
 ```javascript
 const buttons=document.querySelectorAll('.button');
@@ -34,3 +34,33 @@ buttons.forEach( function(button) {
   })
 });
 ```
+
+## Project 2
+
+```javascript
+const form =document.querySelector('form');
+// this outside usecase will give empty value on page reload and we want value after submit button
+// const height=parseInt(document.querySelector('#height').value);
+
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+
+  const height=parseInt(document.querySelector('#height').value);
+  const weight=parseInt(document.querySelector('#weight').value);
+  const result=document.querySelector('#results');
+
+  if(height==='' || height<0 || isNaN(height)){
+    result.innerHTML="Please give a valid height."
+  }
+  else if(weight==='' || weight<0 || isNaN(weight)){
+    result.innerHTML="Please give a valid weight."
+  }
+  else {
+    const bmi=(weight*10000)/(Math.pow(height,2));
+
+    result.innerHTML=`<span>BMI -: ${bmi.toFixed(2)}</span>`;
+  }
+  
+})
+```
+
