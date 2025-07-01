@@ -64,7 +64,7 @@ form.addEventListener('submit',function(e){
 })
 ```
 
-## Project 3 Digital CLock
+## Project 3 Digital Clock
 
 ```javascript
 const clock=document.querySelector('#clock');
@@ -82,3 +82,34 @@ setInterval(function(){
 },1000)//milli second 1sec=1000milli sec
 ```
 
+## Project 4 Guess a number
+#### My code
+```javascript
+const randomNum=Math.floor((Math.random()*100)+1);
+
+const form=document.querySelector('.form');
+
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  const guess=parseInt(document.querySelector('#guessField').value);
+
+  const result=document.getElementsByClassName('lowOrHi');// give an array collection since class name can be reused 
+
+  if(guess<1 || guess>100 || guess==='' ||isNaN(guess))
+  {
+    result[0].innerHTML="<span>INVALID INPUT</span>";
+  }
+  if(guess===randomNum)
+  {
+    result[0].innerHTML=`<span>Congratulation! ${randomNum} matches.</span>`;
+  }
+  else{
+    result[0].innerHTML=`<span>Oops! ${guess} doesn't match.</span>`;
+  }
+
+})
+```
+#### Chai aur code
+```javascript
+
+```
