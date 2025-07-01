@@ -64,3 +64,21 @@ form.addEventListener('submit',function(e){
 })
 ```
 
+## Project 3 Digital CLock
+
+```javascript
+const clock=document.querySelector('#clock');
+ 
+// let date= new Date();
+// console.log(date.toLocaleTimeString());
+// clock.innerHTML=`<span>${date.toLocaleTimeString()}</span>`
+
+
+// will run after every set interval
+setInterval(function(){
+  let date= new Date();
+  // console.log(date.toLocaleTimeString());
+  clock.innerHTML=`<span>${date.toLocaleTimeString()}</span>`
+},1000)//milli second 1sec=1000milli sec
+```
+
