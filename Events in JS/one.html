@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML EVENTS</title>
+</head>
+<body style="background-color: #212121; color: bisque;">
+    <h2>Amazing Pictures</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" src="https://static.vecteezy.com/system/resources/thumbnails/036/324/708/small/ai-generated-picture-of-a-tiger-walking-in-the-forest-photo.jpg" id="tiger" alt="Tiger"></li>
+            <li><img width="200px" src="https://tinypng.com/static/images/boat.png" id="boat" alt=""></li>
+            <li><img width="200px" src="https://png.pngtree.com/thumb_back/fh260/background/20230612/pngtree-beautiful-black-horses-pictures-best-of-free-hd-wallpapers-horse-images-image_2951847.jpg" id="horse" alt=""></li>
+            <li><img width="200px" src="https://static.vecteezy.com/ti/photos-gratuite/t2/27001092-ensemble-de-jaune-fleurs-tournesols-avec-feuilles-botanique-image-floral-conception-pour-numerique-contenu-photo.jpg" id="flower"  alt=""></li> 
+            <!-- <li><img width="200px" src="https://static.vecteezy.com/ti/photos-gratuite/t2/27001092-ensemble-de-jaune-fleurs-tournesols-avec-feuilles-botanique-image-floral-conception-pour-numerique-contenu-photo.jpg" id="flower"onclick="alert('flower clicked')" alt=""></li>  -->
+            <li><img width="200px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjKEJN7WqAUA0bJ2TpCBVl0w8lc1DSr9wFIQ&s" id="ladoo" alt=""></li>
+            <li><a style="background-color: aliceblue;" href="https://www.google.com/" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('flower').onclick= function (){
+    //     alert('flower clicked')
+    // }
+    // attachEvent()
+    // jQuery
+
+    // type , timestamp, preventDefault
+    // target, toElement, srcElement , currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey , keyCode
+
+    // document.getElementById('images').addEventListener('click' , function(e){
+    //     console.log('clicked inside the ul');
+    // },false)
+    // document.getElementById('flower').addEventListener('click' , function(e){
+    //     console.log('clicked flower');
+    // },false)// output aayega first clicked flower then clicked inside the ul 
+
+    // document.getElementById('images').addEventListener('click' , function(e){
+    //     console.log('clicked inside the ul');
+    // },true)
+    // document.getElementById('flower').addEventListener('click' , function(e){
+    //     console.log('clicked flower');
+    // },true)// output aayega first clicked inside the ul  then clicked flower 
+
+    // document.getElementById('images').addEventListener('click' , function(e){
+    //     console.log('clicked inside the ul');
+    // })
+    // document.getElementById('flower').addEventListener('click' , function(e){
+    //     console.log('clicked flower');
+    //     e.stopPropagation()// stop the propagation of the outer event
+    // })
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log('google clicked');
+    // },false)
+
+    // document.querySelector('#images').addEventListener('click',function(e){
+    //     console.log(e);
+    //     console.log(e.target);
+    //     console.log(e.target.parentNode)//li
+    //     console.log(e.target.tagName)// give tags of taget img , li ul in capital letters
+    // },false)
+    // remove images as we clicked it 
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.parentNode)//li
+        if(e.target.tagName=='IMG')
+        {
+            let toRemove=e.target.parentNode//to remove list if we remove only img then dot of li will be there
+            toRemove.remove()
+        }
+        
+        // toRemove.parentNode.removeChild(toRemove)
+    },false)
+</script>
+</html>
