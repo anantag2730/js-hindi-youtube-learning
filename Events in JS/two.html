@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascyn JS</title>
+</head>
+<body style="background-color: coral; color: darkred;">
+    <h1>Ascyn JS</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // console.log("ANANT 1");
+    // setTimeout(function(){
+    //     console.log("ANANT 2");
+    // },0)//3000milli sec=3 sec
+    // console.log("ANANT 3");
+
+    setTimeout(function(){
+        console.log("ANANT");
+    },3000)//3000milli sec=3 sec
+
+    const changeText=function(){
+        document.querySelector('h1').innerHTML='Ascyn JS Learning';
+    }
+    const changeMe=setTimeout(changeText,5000);
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeMe);
+        console.log("STOPPED");
+    })
+</script>
+</html>
